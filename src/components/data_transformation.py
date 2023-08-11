@@ -28,14 +28,22 @@ class DataTransformation:
         
         '''
         try:
-            numerical_columns = ["writing_score", "reading_score"]
-            categorical_columns = [
-                "gender",
-                "race_ethnicity",
-                "parental_level_of_education",
-                "lunch",
-                "test_preparation_course",
-            ]
+            numerical_columns = ['D Gender_Female', 'D Gender_Male', 'D Cause of Death_Accident',
+       'D Cause of Death_Other', 'D Cause of Death_Stroke',
+       'R Etiology_Alcohol', 'R Etiology_Hepatitis', 'R Etiology_NAFLD',
+       'R Etiology_Other', 'R Gender_Female', 'R Gender_Male',
+       'R Immunosuppressant Medication_Cyclosporine',
+       'R Immunosuppressant Medication_Other',
+       'R Immunosuppressant Medication_Tacrolimus', 'D Age', 'D BMI',
+       'D Diabetes', 'D Hypertension', 'D Alcohol Abuse', 'D Smoking',
+       'D Lympochyte', 'D Hepatitis B', 'D Hepatitis C', 'R MELD Score',
+       'R Age', 'R BMI', 'R Diabetes', 'R Hypertension', 'R Alcohol Abuse',
+       'R Smoking', 'R Lympochyte', 'R Hepatitis B', 'R Hepatitis C',
+       'R Albumin level', 'R Alcoholic cirrhosis',
+       'R Primary biliary cirrhosis', 'R Na', 'R Mg', 'R WBC', 'R Platelets',
+       'R Cold Ischemia Time', 'R Warm Ischemia Time', 'R Blood Transfusion',
+       'R Rejection Episodes', 'Complications']
+            categorical_columns = [ ]
 
             num_pipeline= Pipeline(
                 steps=[
@@ -85,8 +93,22 @@ class DataTransformation:
 
             preprocessing_obj=self.get_data_transformer_object()
 
-            target_column_name="math_score"
-            numerical_columns = ["writing_score", "reading_score"]
+            target_column_name='Complications'
+            numerical_columns = ['D Gender_Female', 'D Gender_Male', 'D Cause of Death_Accident',
+       'D Cause of Death_Other', 'D Cause of Death_Stroke',
+       'R Etiology_Alcohol', 'R Etiology_Hepatitis', 'R Etiology_NAFLD',
+       'R Etiology_Other', 'R Gender_Female', 'R Gender_Male',
+       'R Immunosuppressant Medication_Cyclosporine',
+       'R Immunosuppressant Medication_Other',
+       'R Immunosuppressant Medication_Tacrolimus', 'D Age', 'D BMI',
+       'D Diabetes', 'D Hypertension', 'D Alcohol Abuse', 'D Smoking',
+       'D Lympochyte', 'D Hepatitis B', 'D Hepatitis C', 'R MELD Score',
+       'R Age', 'R BMI', 'R Diabetes', 'R Hypertension', 'R Alcohol Abuse',
+       'R Smoking', 'R Lympochyte', 'R Hepatitis B', 'R Hepatitis C',
+       'R Albumin level', 'R Alcoholic cirrhosis',
+       'R Primary biliary cirrhosis', 'R Na', 'R Mg', 'R WBC', 'R Platelets',
+       'R Cold Ischemia Time', 'R Warm Ischemia Time', 'R Blood Transfusion',
+       'R Rejection Episodes', 'Complications']
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
